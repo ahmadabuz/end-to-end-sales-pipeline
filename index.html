@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sales Operations - Transaction Entry</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+            white-space: nowrap;
+            font-size: 24px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px 15px;
+        }
+
+        .form-group {
+            margin-bottom: 0;
+            min-width: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 14px;
+            background-color: white;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+        }
+
+        select:disabled {
+            background-color: #e9ecef;
+            color: #495057;
+            cursor: not-allowed;
+        }
+
+        button {
+            grid-column: 1 / -1;
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .success {
+            color: #28a745;
+        }
+
+        .error {
+            color: #dc3545;
+        }
+
+        /* Tablet layout */
+        @media (max-width: 700px) {
+            .container {
+                padding: 20px;
+            }
+
+            form {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            h2 {
+                white-space: normal;
+                font-size: 22px;
+            }
+        }
+
+        /* Mobile layout */
+        @media (max-width: 480px) {
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Sales Operations - Transaction Entry</h2>
+
+        <form id="salesForm">
+
+            <div class="form-group">
+                <label for="order_date">Order Date:</label>
+                <input type="date" id="order_date" name="order_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="customer_id">Customer ID:</label>
+                <input type="text" id="customer_id" name="customer_id"
+                       placeholder="CUST-042" required>
+            </div>
+
+            <div class="form-group">
+                <label for="product_name">Product:</label>
+                <select id="product_name" name="product_name">
+                    <option>Laptop</option>
+                    <option>Phone</option>
+                    <option>Headphones</option>
+                    <option>Monitor</option>
+                    <option>Desk Chair</option>
+                    <option>Keyboard</option>
+                    <option>Standing Desk</option>
+                    <option>Bookshelf</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category (Auto-filled):</label>
+                <select id="category" name="category" disabled>
+                    <option>Electronics</option>
+                    <option>Office Supplies</option>
+                    <option>Furniture</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity"
+                       min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="unit_price">Unit Price ($):</label>
+                <input type="number" id="unit_price" name="unit_price"
+                       step="0.01" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="region">Region:</label>
+                <select id="region" name="region">
+                    <option>North</option>
+                    <option>South</option>
+                    <option>East</option>
+                    <option>West</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="sales_rep">Sales Rep:</label>
+                <!-- Changed from text input to a dropdown -->
+                <select id="sales_rep" name="sales_rep">
+                    <option>Ahmad Mousa</option>
+                    <option>Abdullah Hazza</option>
+                    <option>Eman Majde</option>
+                    <option>Hajar Mahmoud</option>
+                    <option>Osama Ayman</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="payment_method">Payment Method:</label>
+                <select id="payment_method" name="payment_method">
+                    <option>Card</option>
+                    <option>Cash</option>
+                    <option>Online</option>
+                </select>
+            </div>
+
+            <button type="submit" id="submitBtn">Submit Data</button>
+
+        </form>
+
+        <div id="message"></div>
+
+    </div>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzVcNWG5UyunKEd67ReDSpqYDctAGAzdhFDtTVzbC4eGef9woCFUoh6DwWHKT64REPuCw/exec';
+
+        const form = document.getElementById('salesForm');
+        const messageDiv = document.getElementById('message');
+        const submitBtn = document.getElementById('submitBtn');
+
+        const productSelect = document.getElementById('product_name');
+        const categorySelect = document.getElementById('category');
+
+        function updateCategory() {
+            const product = productSelect.value;
+            let category = "Electronics"; // Default
+            
+            if (["Laptop", "Phone", "Headphones", "Monitor"].includes(product)) {
+                category = "Electronics";
+            } else if (["Desk Chair", "Keyboard"].includes(product)) {
+                category = "Office Supplies";
+            } else if (["Standing Desk", "Bookshelf"].includes(product)) {
+                category = "Furniture";
+            }
+            
+            categorySelect.value = category;
+        }
+
+        updateCategory();
+        
+        productSelect.addEventListener('change', updateCategory);
+
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            submitBtn.innerText = "Submitting...";
+            submitBtn.disabled = true;
+            messageDiv.innerText = "";
+            messageDiv.className = "";
+
+            categorySelect.disabled = false;
+            const formData = new FormData(form);
+            categorySelect.disabled = true; // re-disable it immediately after grabbing data
+
+            fetch(scriptURL, {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.result === 'success') {
+                        messageDiv.innerText = "Data saved successfully!";
+                        messageDiv.className = "success";
+                        form.reset();
+                        updateCategory(); // Reset category back to default after form clears
+                    } else {
+                        messageDiv.innerText = "Error: " + data.error;
+                        messageDiv.className = "error";
+                    }
+                })
+                .catch(error => {
+                    messageDiv.innerText = "Network error! Check console.";
+                    messageDiv.className = "error";
+                    console.error('Error!', error.message);
+                })
+                .finally(() => {
+                    submitBtn.innerText = "Submit Data";
+                    submitBtn.disabled = false;
+                });
+        });
+    </script>
+
+</body>
+</html>
