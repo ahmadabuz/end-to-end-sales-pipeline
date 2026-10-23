@@ -62,8 +62,6 @@ sales-data-pipeline/
 5. Connect Looker Studio to the BigQuery table.
 
 ## Source Code
-
-## Source Code
 - [Frontend Form (index.html)](./index.html)
 - [Backend Pipeline (appsscript.js)](./appsscript.js)
 
