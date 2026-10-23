@@ -63,20 +63,8 @@ sales-data-pipeline/
 
 ## Source Code
 
-<details>
-<summary><b>Frontend: index.html</b></summary>
-
-```html
-<!-- PASTE YOUR FULL INDEX.HTML CODE HERE -->
-```
-
-</details>
-
-<details>
-<summary><b>Backend: appsscript.js</b></summary>
-
-```javascript
-// PASTE YOUR FULL APPS SCRIPT CODE HERE
-```
+## Source Code
+- [Frontend Form (index.html)](./index.html)
+- [Backend Pipeline (appsscript.js)](./appsscript.js)
 
 </details>
