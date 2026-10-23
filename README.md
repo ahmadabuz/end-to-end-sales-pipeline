@@ -39,9 +39,9 @@ This project is an automated data pipeline that captures sales transactions from
 
 ## Dashboard
 
-![Sales Dashboard](https://raw.githubusercontent.com/ahmadabuz/sales-data-pipeline/main/dashboard.png)
+![Sales Dashboard](dashboard.png)
 
-View the live interactive dashboard here: [Looker Studio Link](https://paste_your_link_here/)
+View the live interactive dashboard here: [Looker Studio Link](https://datastudio.google.com/s/pTD0_5gGO50)
 
 ## Repository Structure
 
