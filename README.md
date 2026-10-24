@@ -39,7 +39,6 @@ This project is an automated data pipeline that captures sales transactions from
 
 ## Dashboard
 
-![Dashboard Preview](https://raw.githubusercontent.com/ahmadabuz/end-to-end-sales-pipeline/main/dashboard.jpg)
 
 View the live interactive dashboard here: [Looker Studio Link](https://datastudio.google.com/s/pTD0_5gGO50)
 
